@@ -3,6 +3,7 @@
     public record OrderId
     {
         public Guid Value { get; }
+        private OrderId() { }
         private OrderId(Guid value) => Value = value;
         public static OrderId Of(Guid value)
         {
