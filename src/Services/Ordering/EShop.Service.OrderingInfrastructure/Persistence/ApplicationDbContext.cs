@@ -14,6 +14,10 @@
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Ignore<Address>();
+            builder.Ignore<OrderName>();
+            builder.Ignore<Payment>();
         }
     }
 }

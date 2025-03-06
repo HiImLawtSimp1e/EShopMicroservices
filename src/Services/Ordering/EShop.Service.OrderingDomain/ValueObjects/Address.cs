@@ -1,4 +1,6 @@
-﻿namespace EShop.Service.OrderingDomain.ValueObjects
+﻿using System.Text.Json.Serialization;
+
+namespace EShop.Service.OrderingDomain.ValueObjects
 {
     public record Address
     {
@@ -13,7 +15,6 @@
         protected Address()
         {
         }
-
         private Address(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
         {
             FirstName = firstName;

@@ -6,10 +6,6 @@
         {
             builder.HasKey(o => o.Id);
 
-            builder.Property(o => o.Id).HasConversion(
-                            orderId => orderId.Value,
-                            dbId => OrderId.Of(dbId));
-
             builder.HasOne<Customer>()
               .WithMany()
               .HasForeignKey(o => o.CustomerId)

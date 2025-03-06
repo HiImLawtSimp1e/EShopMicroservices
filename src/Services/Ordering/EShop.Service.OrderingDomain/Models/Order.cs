@@ -1,10 +1,10 @@
 ﻿namespace EShop.Service.OrderingDomain.Models
 {
-    public class Order : Aggregate<OrderId>
+    public class Order : Aggregate<Guid>
     {
         private readonly List<OrderItem> _orderItems = new();
         public IReadOnlyList<OrderItem> OrderItems => _orderItems.AsReadOnly();
-        public CustomerId CustomerId { get; private set; } = default!;
+        public Guid CustomerId { get; private set; } = default!;
         public OrderName OrderName { get; private set; } = default!;
         public Address ShippingAddress { get; private set; } = default!;
         public Address BillingAddress { get; private set; } = default!;
@@ -17,7 +17,7 @@
         }
 
         private Order() { }
-        public static Order Create(OrderId id, CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
+        public static Order Create(Guid id, Guid customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment)
         {
             var order = new Order
             {
@@ -46,7 +46,7 @@
             AddDomainEvent(new OrderUpdatedEvent(this));
         }
 
-        public void Add(ProductId productId, int quantity, decimal price)
+        public void Add(Guid productId, int quantity, decimal price)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(quantity);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
@@ -55,7 +55,7 @@
             _orderItems.Add(orderItem);
         }
 
-        public void Remove(ProductId productId)
+        public void Remove(Guid productId)
         {
             var orderItem = _orderItems.FirstOrDefault(x => x.ProductId == productId);
             if (orderItem is not null)
