@@ -75,8 +75,8 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
 #### 1. Order Service: Domain Layer
 - Patterns & Principles
   - Tactical Domain-Driven Design 
-    - Entity, Value Object, Aggregate Pattern & Aggregate Root Pattern
-    - Anemic-Domain Model & Rich-Domain Model
+    - DDD Objects (Entities, Value Objects, Aggregates & Aggregate Root)
+    - Rich-Domain Model
     - Strong Typed IDs
     - Domain Events & Integration Events
 - Library
@@ -86,9 +86,9 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
 - Patterns & Principles
   - Repository Pattern
   - ORM Pattern
-    - Entity Configuration: using ModelBuider mapping DDD to EF Core Entity
   - Domain-Driven Design
-    - Value Object Complex Types & Aggregate Root Entities
+    - Mapping DDD Objects to ORM Entities
+    - Value Object Complex Types, ORM Aggregate Root Entities
     - Raise & Dispatch Domain: using EF Core ORM & MediatR
 - Library
   - EF Core ORM
