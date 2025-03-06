@@ -88,10 +88,11 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
   - ORM Pattern
   - Domain-Driven Design
     - Mapping DDD Objects to ORM Entities
-    - Value Object Complex Types, ORM Aggregate Root Entities
     - Raise & Dispatch Domain: using EF Core ORM & MediatR
 - Library
   - EF Core ORM
+      - Complex Types: suport Value Objects in DDD
+      - EF Aggregate Root Entities
 - Datastore
   - MSSQL RBMDS 
 
