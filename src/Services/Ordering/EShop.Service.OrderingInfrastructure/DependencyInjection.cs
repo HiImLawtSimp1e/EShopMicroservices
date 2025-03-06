@@ -10,6 +10,10 @@ namespace EShop.Service.OrderingInfrastructure
             var connectionString = configuration.GetConnectionString("Database");
 
             // Add services to the container.
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
 
             return services;
         }
