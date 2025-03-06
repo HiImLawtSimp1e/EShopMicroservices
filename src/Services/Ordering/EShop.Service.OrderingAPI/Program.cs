@@ -20,6 +20,9 @@ var app = builder.Build();
 //Configure the HTTPs request pineline.
 app.UseApiServices();
 
-await app.InitialiseDatabaseAsync();
+if (app.Environment.IsDevelopment())
+{
+    await app.InitialiseDatabaseAsync();
+}
 
 app.Run();
