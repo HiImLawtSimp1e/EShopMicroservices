@@ -1,0 +1,14 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using FluentValidation;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using BuidingBlocks.CQRS;
+global using BuidingBlocks.Pagination;
+global using EShop.Service.OrderingDomain.Enum;
+global using EShop.Service.OrderingDomain.Models;
+global using EShop.Service.OrderingDomain.ValueObjects;
+global using EShop.Service.OrderingDomain.Events;
+global using EShop.Service.OrderingApplication.DTOs;
+global using EShop.Service.OrderingApplication.Abstractions;
+global using EShop.Service.OrderingApplication.Exceptions;
+global using EShop.Service.OrderingApplication.Extensions;
