@@ -1,21 +1,21 @@
 ﻿using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace EShop.Service.OrderingDomain.ValueObjects
 {
+    [Owned]
     public record Address
     {
-        public string FirstName { get; } = default!;
-        public string LastName { get; } = default!;
-        public string? EmailAddress { get; } = default!;
-        public string AddressLine { get; } = default!;
-        public string Country { get; } = default!;
-        public string State { get; } = default!;
-        public string ZipCode { get; } = default!;
+        public string FirstName { get; init; } = default!;
+        public string LastName { get; init; } = default!;
+        public string? EmailAddress { get; init; } = default!;
+        public string AddressLine { get; init; } = default!;
+        public string Country { get; init; } = default!;
+        public string State { get; init; } = default!;
+        public string ZipCode { get; init; } = default!;
 
-        protected Address()
-        {
-        }
-        private Address(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
+        [JsonConstructor]
+        public Address(string firstName, string lastName, string? emailAddress, string addressLine, string country, string state, string zipCode)
         {
             FirstName = firstName;
             LastName = lastName;

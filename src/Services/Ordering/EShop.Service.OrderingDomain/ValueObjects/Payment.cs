@@ -1,17 +1,21 @@
-﻿namespace EShop.Service.OrderingDomain.ValueObjects
+﻿using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+
+namespace EShop.Service.OrderingDomain.ValueObjects
 {
+    [Owned]
     public record Payment
     {
-        public string? CardName { get; } = default!;
-        public string? CardNumber { get; } = default!;
-        public string? Expiration { get; } = default!;
-        public string? CVV { get; } = default!;
-        public int PaymentMethod { get; } = default!;
-        protected Payment()
-        {
-        }
+        public string CardName { get; init; } = default!;
+        public string CardNumber { get; init; } = default!;
+        public string Expiration { get; init; } = default!;
+        public string CVV { get; init; } = default!;
+        public int PaymentMethod { get; init; } = default!;
 
-        private Payment(string cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
+        protected Payment() { } 
+
+        [JsonConstructor]
+        public Payment(string cardName, string cardNumber, string expiration, string cvv, int paymentMethod)
         {
             CardName = cardName;
             CardNumber = cardNumber;
