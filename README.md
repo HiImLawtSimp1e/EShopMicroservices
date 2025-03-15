@@ -77,7 +77,6 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
   - Tactical Domain-Driven Design 
     - DDD Objects (Entities, Value Objects, Aggregates & Aggregate Root)
     - Rich-Domain Model
-    - Strong Typed IDs
     - Domain Events & Integration Events
 - Library
   - No libraries. Because the Domain Layer cannot depend on external devices.
