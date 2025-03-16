@@ -72,16 +72,29 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
   - Tactical Domain-Driven Design: Oriented Microservice 
   - Dependency Injection
 
-#### 1. Order Service: Domain Layer
+#### Core ( Business Logic )
+1. Domain Layer
 - Patterns & Principles
   - Tactical Domain-Driven Design 
     - DDD Objects (Entities, Value Objects, Aggregates & Aggregate Root)
     - Rich-Domain Model
     - Domain Events & Integration Events
-- Library
-  - No libraries. Because the Domain Layer cannot depend on external devices.
+- ⚠️ Library
+  - ⚠️ Depends on EF Core: for the ORM to properly recognize Value Objects (instead of treating them as Entities)
+  - ⚠️ Depends on MediatR: for Domain Events
 
-#### 2. Order Service: Infrastructure Layer
+2. Application Layer
+- Patterns & Principles
+  - CQRS
+  - Mediator Pattern: for implement CQRS
+- ⚠️ Library
+  - ⚠️ Depends on MediatR: Using this library is the quickest and simplest way to implement the CQRS pattern
+  - ⚠️ Depends on Mapster: for Object Mapping
+  - ⚠️ Depends on FluentValidation: for Input Validation
+
+#### External ( Infrastructure & External Systems )
+
+1. Infrastructure Layer
 - Patterns & Principles
   - Repository Pattern
   - ORM Pattern
@@ -95,16 +108,7 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
 - Datastore
   - MSSQL RBMDS 
 
-#### 3. Order Service: Application Layer
-- Patterns & Principles
-  - CQRS
-  - Mediator Pattern: for implement CQRS
-- Library
-  - MediatR for CQRS: This library simplifies the implementation of the CQRS pattern.
-  - Mapster for Object Mapping
-  - FluentValidation for Input Validation
-
-#### 4. Order Service: Presentation Layer (API Layer)
+2. Presentation Layer (API Layer)
 - Patterns & Principles
   - Minimal APIs
 - Library
