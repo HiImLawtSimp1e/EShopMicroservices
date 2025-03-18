@@ -72,7 +72,7 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
   - Tactical Domain-Driven Design: Oriented Microservice 
   - Dependency Injection
 
-#### Core ( Business Logic )
+#### Core Layers ( Business Logic )
 1. Domain Layer
 - Patterns & Principles
   - Tactical Domain-Driven Design 
@@ -92,7 +92,7 @@ Thank you very much for sharing your valuable knowledge. It really helps me a lo
   - ⚠️ Depends on Mapster: for Object Mapping
   - ⚠️ Depends on FluentValidation: for Input Validation
 
-#### External ( Infrastructure & External Systems )
+#### Periphery Layers ( Infrastructure & External Systems )
 
 1. Infrastructure Layer
 - Patterns & Principles
