@@ -14,7 +14,7 @@ public static class Extentsions
 
             if (assembly != null)
             {
-                config.AddConsumers(assembly);
+                config.AddConsumers(assembly);  
             }
 
             config.UsingRabbitMq((context, configurator) =>
