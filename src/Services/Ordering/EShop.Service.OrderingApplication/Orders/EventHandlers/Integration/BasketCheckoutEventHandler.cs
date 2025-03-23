@@ -13,8 +13,6 @@ namespace EShop.Service.OrderingApplication.Orders.EventHandlers.Integration
 
             var command = MapToCreateOrderCommand(context.Message);
             await sender.Send(command);
-
-            throw new NotImplementedException();
         }
 
         private CreateOrderCommand MapToCreateOrderCommand(BasketCheckoutEvent message)
