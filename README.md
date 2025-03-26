@@ -10,6 +10,16 @@ From the course tutorial [.NET 8 Microservices](https://www.udemy.com/course/mic
 
 Thank you very much for sharing your valuable knowledge. It really helps me a lot.
 
+## 🚀 Quick start
+
+To run this project on your computer, you need to have .NET 8 package, MS SQL, PostgreSQL, Docker, Redis, and RabbitMQ installed.
+
+1.  **Step 1.**
+    Clone the project
+    ```sh
+    git clone https://github.com/HiImLawtSimp1e/EShopMicroservices.git
+    ``` 
+
 ## Catlog Service
 - Patterns & Principles
   - Vertical Slice Architecture
