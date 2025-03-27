@@ -9,7 +9,10 @@ services:
     image: mcr.microsoft.com/mssql/server
   rabbitmq:
     image: rabbitmq:management
+  yarpapigateway:
+    image: ${DOCKER_REGISTRY-}yarpapigateway
 
 volumes:
   postgres_catalog:
   postgres_basket:  
+  mssql_order:  
