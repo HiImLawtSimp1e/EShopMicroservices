@@ -23,6 +23,9 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
 - ASP.NET Razor Pages with Refit HTTP Client Factory
 - Bootstrap
 
+## BackEnd API Gateways
+- YARP API Gateway
+
 ## Catlog Service
 - Patterns & Principles
   - Vertical Slice Architecture
