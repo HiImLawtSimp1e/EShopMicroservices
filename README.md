@@ -19,6 +19,9 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
     ```sh
     git clone https://github.com/HiImLawtSimp1e/EShopMicroservices.git
     ``` 
+## FrontEnd
+- ASP.NET Razor Pages with Refit HTTP Client Factory
+- Bootstrap
 
 ## Catlog Service
 - Patterns & Principles
