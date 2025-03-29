@@ -10,6 +10,7 @@ global using BuidingBlocks.Exceptions;
 global using BuidingBlocks.Exceptions.Handler;
 global using EShop.Service.CatalogAPI.Domain.Entities;
 global using EShop.Service.CatalogAPI.Exceptions;
+global using EShop.Service.CatalogAPI.Shared;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using EShop.Service.CatalogAPI.Initialization;

@@ -2,7 +2,7 @@
 {
     public record GetProductByCategoryRequest(string Category, int? PageNumber = 1, int? PageSize = 10);
 
-    public record GetProductByCategoryResponse(IEnumerable<Product> Products);
+    public record GetProductByCategoryResponse(PaginatedResult<Product> Products);
 
     public class GetProductByCategoryEndpoint : ICarterModule
     {
