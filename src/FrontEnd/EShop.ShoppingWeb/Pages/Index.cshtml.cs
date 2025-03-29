@@ -1,4 +1,3 @@
-using EShop.ShoppingWeb.Services;
 namespace EShop.ShoppingWeb.Pages
 {
     public class IndexModel(ICatalogService catalogService, IBasketService basketService, ILogger<IndexModel> logger) : PageModel
@@ -9,7 +8,7 @@ namespace EShop.ShoppingWeb.Pages
         {
             logger.LogInformation("Index page visited");
             var result = await catalogService.GetProducts();
-            ProductList = result.Products;
+            ProductList = result.Products.Data;
             return Page();
         }
 
@@ -21,7 +20,7 @@ namespace EShop.ShoppingWeb.Pages
 
             var basket = await basketService.LoadUserBasket();
 
-            var newShopingCartItem = new ShoppingCartItemModel
+            var newShoppingCartItem = new ShoppingCartItemModel
             {
                 ProductId = productId,
                 ProductName = productResponse.Product.Name,
@@ -30,7 +29,7 @@ namespace EShop.ShoppingWeb.Pages
                 Color = "Black"
             };
 
-            basket.Items.Add(newShopingCartItem);
+            basket.Items.Add(newShoppingCartItem);
 
             await basketService.StoreBasket(new StoreBasketRequest(basket));
 

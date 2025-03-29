@@ -1,6 +1,8 @@
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
+global using Microsoft.Extensions.Caching.Memory;
 global using Refit;
+global using EShop.ShoppingWeb.DomainModels.Common;
 global using EShop.ShoppingWeb.DomainModels.Catalog;
 global using EShop.ShoppingWeb.DomainModels.Basket;
 global using EShop.ShoppingWeb.DomainModels.Ordering;
@@ -28,6 +30,8 @@ builder.Services.AddRefitClient<IOrderingService>().ConfigureHttpClient(c =>
 {
     c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]!);
 });
+
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
