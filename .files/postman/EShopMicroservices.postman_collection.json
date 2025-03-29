@@ -10,6 +10,19 @@
       "name": "Catalog",
       "item": [
         {
+          "name": "GET Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{catalog_url}}/categories",
+              "host": ["{{catalog_url}}"],
+              "path": ["categories"]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "GET Product",
           "request": {
             "method": "GET",
@@ -51,9 +64,19 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{catalog_url}}/products/category/c2",
+              "raw": "{{catalog_url}}/products/category/c2?pageNumber=1&pageSize=5",
               "host": ["{{catalog_url}}"],
-              "path": ["products", "category", "c2"]
+              "path": ["products", "category", "c2"],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                }
+              ]
             }
           },
           "response": []
@@ -357,6 +380,29 @@
           "name": "Catalog",
           "item": [
             {
+              "name": "GET Category",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{yarp_url}}/catalog-service/categories?pageNumber=1&pageSize=5",
+                  "host": ["{{yarp_url}}"],
+                  "path": ["catalog-service", "categories"],
+                  "query": [
+                    {
+                      "key": "pageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
               "name": "GET Product",
               "request": {
                 "method": "GET",
@@ -402,9 +448,19 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "{{yarp_url}}/catalog-service/products/category/c2",
+                  "raw": "{{yarp_url}}/catalog-service/products/category/c2?pageNumber=1&pageSize=5",
                   "host": ["{{yarp_url}}"],
-                  "path": ["catalog-service", "products", "category", "c2"]
+                  "path": ["catalog-service", "products", "category", "c2"],
+                  "query": [
+                    {
+                      "key": "pageNumber",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "5"
+                    }
+                  ]
                 }
               },
               "response": []
