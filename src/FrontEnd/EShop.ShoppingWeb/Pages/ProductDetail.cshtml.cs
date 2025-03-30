@@ -21,20 +21,30 @@ namespace EShop.ShoppingWeb.Pages
         public async Task<IActionResult> OnPostAddToCartAsync(Guid productId)
         {
             logger.LogInformation("Add to cart button clicked");
+
             var productResponse = await catalogService.GetProduct(productId);
 
             var basket = await basketService.LoadUserBasket();
 
-            var shoppingCartItem = new ShoppingCartItemModel
-            {
-                ProductId = productId,
-                ProductName = productResponse.Product.Name,
-                Price = productResponse.Product.Price,
-                Quantity = Quantity,
-                Color = Color
-            };
+            var existingItem = basket.Items.FirstOrDefault(i => i.ProductId == productId && i.Color == Color);
 
-            basket.Items.Add(shoppingCartItem);
+            if (existingItem != null)
+            {
+                existingItem.Quantity += Quantity;
+            }
+            else
+            {
+                var shoppingCartItem = new ShoppingCartItemModel
+                {
+                    ProductId = productId,
+                    ProductName = productResponse.Product.Name,
+                    Price = productResponse.Product.Price,
+                    Quantity = Quantity,
+                    Color = Color
+                };
+
+                basket.Items.Add(shoppingCartItem);
+            }
 
             await basketService.StoreBasket(new StoreBasketRequest(basket));
 

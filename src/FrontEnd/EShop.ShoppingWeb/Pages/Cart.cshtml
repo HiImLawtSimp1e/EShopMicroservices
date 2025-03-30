@@ -27,6 +27,7 @@
                             <th scope="col"> </th>
                             <th scope="col">Product</th>
                             <th scope="col">Available</th>
+                            <th scope="col">Color</th>
                             <th scope="col" class="text-center">Quantity</th>
                             <th scope="col" class="text-right">Price</th>
                             <th> </th>
@@ -40,6 +41,7 @@
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /></td>
                                 <td>@cartItem.ProductName</td>
                                 <td>In stock</td>
+                                <td>@cartItem.Color</td>
                                 <td><input class="form-control" type="text" value="@cartItem.Quantity" /></td>
                                 <td class="text-right">@(cartItem.Price * cartItem.Quantity) $</td>
                                 <td class="text-right">
@@ -47,6 +49,7 @@
                                     <form asp-page-handler="RemoveToCart" method="post">
                                         <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                                         <input type="hidden" asp-for="@cartItem.ProductId" name="productId" />
+                                        <input type="hidden" asp-for="@cartItem.Color" name="color" />
                                     </form>
 
                                 </td>
