@@ -75,6 +75,22 @@ services:
      volumes:
         - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
         - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+ 
+  shoppingweb:
+    build:
+      context: ./src/FrontEnd/EShop.ShoppingWeb
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ApiSettings__GatewayAddress=http://yarpapigateway:8080
+    depends_on:
+      - yarpapigateway
+    ports:
+      - "6005:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
   distributedcache:
      container_name: distributedcache

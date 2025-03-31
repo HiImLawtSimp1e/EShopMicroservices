@@ -11,6 +11,8 @@ services:
     image: rabbitmq:management
   yarpapigateway:
     image: ${DOCKER_REGISTRY-}yarpapigateway
+  shoppingweb:
+    image: ${DOCKER_REGISTRY-}shoppingweb
 
 volumes:
   postgres_catalog:
