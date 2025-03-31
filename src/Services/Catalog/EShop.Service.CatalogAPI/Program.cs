@@ -37,10 +37,12 @@ builder.Services.AddMarten(opt =>
 }).UseLightweightSessions();
 
 //Seeding data in Development environment
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.InitializeMartenWith<CatalogInitialData>();
-}
+//if (builder.Environment.IsDevelopment())
+//{
+//    builder.Services.InitializeMartenWith<CatalogInitialData>();
+//}
+
+builder.Services.InitializeMartenWith<CatalogInitialData>();
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
