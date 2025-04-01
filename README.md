@@ -8,6 +8,11 @@ This is my exercise to learn how to implement modern software architectures in A
 
 From the course tutorial [.NET 8 Microservices](https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet) by Mehmet Ozkaya.
 
+![Architecture Diagram](/doc/architecture-diagram/architecture-diagram.png)
+
+> _Architecture Diagram_
+
+
 Thank you very much for sharing your valuable knowledge. It really helps me a lot.
 
 ## 🚀 Quick start
@@ -27,6 +32,10 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
 - YARP API Gateway
 
 ## Catlog Service
+![Architecture Diagram](/doc/architecture-diagram/catalog-service-architecture.png)
+
+> _Catalog Service Architecture Diagram_
+
 - Patterns & Principles
   - Vertical Slice Architecture
   - CQRS
@@ -44,6 +53,11 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
   - PostgreSQL used as a Document database (Marten ORM): By using PostgreSQL's JSON column features, Marten ORM transforms PostgreSQL into `.NET Transactional Document DB`
 
 ## Basket Service
+
+![Architecture Diagram](/doc/architecture-diagram/basket-service-architecture.png)
+
+> _Basket Service Architecture Diagram_
+
 - Patterns & Principles
   - Vertical Slice Architecture
   - CQRS
@@ -70,6 +84,11 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
   - Redis distrubuted cache
 
 ## Discount Service
+
+![Architecture Diagram](/doc/architecture-diagram/discount-service-architecture.png)
+
+> _Discount Service Architecture Diagram_
+
 - Patterns & Principles
   - N-Layered Architecture
   - gRPC Protobuf files Endpoints: for service communication
@@ -81,7 +100,12 @@ To run this project on your computer, you need to have .NET 8 package, MS SQL, P
 -Datastore
   - SQLite RDMBS: embedded SQL database optimized for efficient small-scale data storage
 
-## Order Service
+## Ordering Service
+
+![Architecture Diagram](/doc/architecture-diagram/ordering-service-architecture.png)
+
+> _Ordering Service Architecture Diagram_
+
 - Common Patterns & Principles
   - SOLID
   - Clean Architecture
